@@ -1,0 +1,25 @@
+@startuml
+actor "Utilisateur" as user
+participant "LoginView" as view
+participant "AuthService (RMI Proxy)" as rmi
+participant "AuthServiceImpl" as service
+participant "UtilisateurDAO" as userRepo
+database "PostgreSQL" as db
+
+user -> view : Saisir Identifiants (Email, Password)
+view -> rmi : authentifier(email, password)
+rmi -> service : login(email, password)
+service -> userRepo : findByEmail(email)
+userRepo -> db : SELECT * FROM utilisateur WHERE email = ...
+db --> userRepo : ResultSet
+userRepo --> service : Utilisateur Object
+
+alt Authentification Réussie
+    service -> service : Vérifier mot de passe (BCrypt)
+    service --> view : Session / User details (Success)
+    view --> user : Afficher Dashboard
+else Identifiants Incorrects
+    service --> view : Error (Invalid credentials)
+    view --> user : Afficher Message d'erreur
+end
+@enduml

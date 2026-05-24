@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox alignment="CENTER" spacing="30.0" style="-fx-background-color: white;" stylesheets="@../../resources/css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.controller.HomeController">
+    <padding>
+        <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+    </padding>
+    <children>
+        <HBox alignment="CENTER_LEFT" maxWidth="800.0">
+            <children>
+                <Button onAction="#handleBack" styleClass="button-action" text="← Retour" />
+            </children>
+        </HBox>
+
+        <VBox alignment="CENTER" spacing="20.0" styleClass="card" maxWidth="600.0">
+            <padding>
+                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+            </padding>
+            <children>
+                <Label style="-fx-font-size: 4em;" text="🎟" />
+                <Label styleClass="label-header" text="Mes Billets" textFill="#1a237e" />
+                <Label style="-fx-font-size: 1.2em;" text="Connectez-vous pour voir vos réservations" textAlignment="CENTER" wrapText="true" />
+                <Label text="L'achat et la consultation de vos billets nécessitent un compte client SportTicket Pro. C'est rapide et gratuit !" textAlignment="CENTER" textFill="#6c757d" wrapText="true" />
+                
+                <HBox alignment="CENTER" spacing="15.0">
+                    <padding>
+                        <Insets top="20.0" />
+                    </padding>
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#handleLogin" text="SE CONNECTER">
+                            <styleClass>
+                                <String fx:value="button-secondary" />
+                            </styleClass>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleRegister" text="S'INSCRIRE">
+                            <styleClass>
+                                <String fx:value="button-primary" />
+                            </styleClass>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>

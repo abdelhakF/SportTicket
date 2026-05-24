@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="diagrams_schema.xsd">
+  <metadata>
+    <title>Modèle de Données et Architecture</title>
+    <type>Class Diagram</type>
+  </metadata>
+  <elements>
+    <!-- Model Entities -->
+    <element id="C1" label="Entité Type A">
+      <description>Représente le profil utilisateur principal</description>
+    </element>
+    <element id="C2" label="Entité Type B">
+      <description>Représente un item de contenu</description>
+    </element>
+    <element id="C3" label="Entité Type C">
+      <description>Représente une classification</description>
+    </element>
+    <element id="C4" label="Entité Type D">
+      <description>Représente une transaction</description>
+    </element>
+    <element id="C5" label="Entité Type E">
+      <description>Représente un enregistrement financier</description>
+    </element>
+    <element id="C6" label="Entité Type F">
+      <description>Représente un artefact de sortie</description>
+    </element>
+    
+    <!-- Interfaces and Services -->
+    <element id="I1" label="Contrat de Service"/>
+    <element id="S1" label="Implémentation du Service"/>
+  </elements>
+  <relationships>
+    <!-- Associations -->
+    <relationship from="C1" to="C4" label="Possède n" type="Association 1:N"/>
+    <relationship from="C2" to="C3" label="Contient n" type="Association 1:N"/>
+    <relationship from="C3" to="C4" label="Référence n" type="Association 1:N"/>
+    <relationship from="C4" to="C5" label="Lié à 0..1" type="Association 1:1"/>
+    <relationship from="C5" to="C6" label="Génère n" type="Association 1:N"/>
+    
+    <!-- Realization -->
+    <relationship from="S1" to="I1" type="Réalisation"/>
+  </relationships>
+</diagram>

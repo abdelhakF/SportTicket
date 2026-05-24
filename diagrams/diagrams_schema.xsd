@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Type for Generic Element (Class, Actor, UseCase, Participant) -->
+  <xs:complexType name="GenericElement">
+    <xs:sequence>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required"/>
+    <xs:attribute name="label" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <!-- Type for Relationships (Link, Association, Message) -->
+  <xs:complexType name="GenericRelationship">
+    <xs:attribute name="from" type="xs:IDREF" use="required"/>
+    <xs:attribute name="to" type="xs:IDREF" use="required"/>
+    <xs:attribute name="type" type="xs:string" use="optional"/>
+    <xs:attribute name="label" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <!-- Diagram Container -->
+  <xs:element name="diagram">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="metadata" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="title" type="xs:string"/>
+              <xs:element name="type" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="elements">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="element" type="GenericElement" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="relationships" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="relationship" type="GenericRelationship" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

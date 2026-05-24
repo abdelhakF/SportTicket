@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="diagrams_schema.xsd">
+  <metadata>
+    <title>Flux de Contrôle d'Accès</title>
+    <type>Sequence Diagram</type>
+  </metadata>
+  <elements>
+    <element id="E1" label="Utilisateur"/>
+    <element id="E2" label="Interface Front-end"/>
+    <element id="E3" label="Service de Médiation"/>
+    <element id="E4" label="Composant de Logique Métier"/>
+    <element id="E5" label="Passerelle de Données"/>
+    <element id="E6" label="Entrepôt de Données"/>
+  </elements>
+  <relationships>
+    <relationship from="E1" to="E2" label="Initier Action (Données)"/>
+    <relationship from="E2" to="E3" label="Appeler Méthode 1"/>
+    <relationship from="E3" to="E4" label="Appeler Méthode 2"/>
+    <relationship from="E4" to="E5" label="Rechercher Entité"/>
+    <relationship from="E5" to="E6" label="Exécuter Requête SQL"/>
+    <relationship from="E6" to="E5" label="Retourner Données Brutes"/>
+    <relationship from="E5" to="E4" label="Retourner Objet"/>
+    
+    <!-- Proccessing note -->
+    <relationship from="E4" to="E4" label="Validation Interne"/>
+    
+    <!-- Success path -->
+    <relationship from="E4" to="E2" label="Réponse Succès"/>
+    <relationship from="E2" to="E1" label="Notification Succès"/>
+    
+    <!-- Alternative paths could be added here as nested relationships if schema supported it, but keeping it flat for simplicity -->
+  </relationships>
+</diagram>

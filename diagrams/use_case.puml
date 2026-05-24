@@ -1,0 +1,47 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Client" as client
+actor "Administrateur" as admin
+
+rectangle "Système de Billetterie" {
+    usecase "S'inscrire" as UC_Register
+    usecase "Se Connecter" as UC_Login
+    usecase "Rechercher des Événements" as UC_Search
+    usecase "Sélectionner des Places" as UC_Select
+    usecase "Réserver des Places" as UC_Reserve
+    usecase "Payer une Réservation" as UC_Pay
+    usecase "Générer le Billet" as UC_Ticket
+    usecase "Consulter ses Billets" as UC_ViewTickets
+    usecase "Modifier son Profil" as UC_Profile
+    
+    usecase "Gérer les Événements (CRUD)" as UC_ManageEvents
+    usecase "Gérer les Stades et Sports" as UC_ManageBase
+    usecase "Gérer les Catégories de Prix" as UC_ManageCat
+    usecase "Gérer les Utilisateurs" as UC_ManageUsers
+    usecase "Consulter les Statistiques / CA" as UC_Stats
+}
+
+client -- UC_Register
+client -- UC_Login
+client -- UC_Search
+client -- UC_Select
+client -- UC_Reserve
+client -- UC_ViewTickets
+client -- UC_Profile
+
+admin -- UC_Login
+admin -- UC_ManageEvents
+admin -- UC_ManageBase
+admin -- UC_ManageCat
+admin -- UC_ManageUsers
+admin -- UC_Stats
+
+UC_Reserve ..> UC_Login : <<include>>
+UC_Reserve ..> UC_Select : <<include>>
+UC_Pay ..> UC_Reserve : <<extend>>
+UC_Ticket ..> UC_Pay : <<include>>
+UC_ViewTickets ..> UC_Login : <<include>>
+
+@enduml

@@ -1,0 +1,54 @@
+@startuml
+package "Model" {
+    class Utilisateur {
+        - id: long
+        - nom: String
+        - prenom: String
+        - email: String
+        - role: String
+    }
+    class Evenement {
+        - id: long
+        - nom: String
+        - dateEvenement: ZonedDateTime
+    }
+    class Categorie {
+        - id: long
+        - nom: String
+        - prix: BigDecimal
+        - placesDisponibles: int
+    }
+    class Reservation {
+        - id: long
+        - statut: String
+        - quantite: int
+    }
+    class Paiement {
+        - id: long
+        - montant: BigDecimal
+    }
+    class Billet {
+        - id: long
+        - reference: String
+    }
+}
+
+package "Service" {
+    interface TicketService <<Remote>> {
+        + inscription(user): Utilisateur
+        + reserverPlaces(userId, catId, qty): Reservation
+        + payerReservation(resId, methode): Paiement
+    }
+    class TicketServiceImpl {
+        - userDao: UtilisateurDAO
+        - eventDao: EvenementDAO
+    }
+}
+
+Utilisateur "1" -- "0..*" Reservation
+Evenement "1" -- "1..*" Categorie
+Categorie "1" -- "0..*" Reservation
+Reservation "1" -- "0..1" Paiement
+Paiement "1" -- "1..*" Billet
+TicketServiceImpl ..|> TicketService
+@enduml

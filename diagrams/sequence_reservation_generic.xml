@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="diagrams_schema.xsd">
+  <metadata>
+    <title>Flux de Processus Transactionnel</title>
+    <type>Sequence Diagram</type>
+  </metadata>
+  <elements>
+    <element id="E1" label="Utilisateur"/>
+    <element id="E2" label="Interface Front-end"/>
+    <element id="E3" label="Service de Transactions"/>
+    <element id="E4" label="Composant Logique"/>
+    <element id="E5" label="DAO Entité A"/>
+    <element id="E6" label="DAO Entité B"/>
+    <element id="E7" label="DAO Entité C"/>
+    <element id="E8" label="Entrepôt de Données"/>
+  </elements>
+  <relationships>
+    <!-- Step 1: Request -->
+    <relationship from="E1" to="E2" label="Requête de Transaction"/>
+    <relationship from="E2" to="E3" label="Soumettre Données"/>
+    <relationship from="E3" to="E4" label="Traiter Demande"/>
+    <relationship from="E4" to="E5" label="Vérifier Disponibilité"/>
+    <relationship from="E4" to="E6" label="Enregistrer Pré-transaction"/>
+    <relationship from="E6" to="E8" label="Insertion Persistante"/>
+    <relationship from="E4" to="E5" label="Mise à jour État"/>
+    <relationship from="E4" to="E2" label="Retourner Détails"/>
+    
+    <!-- Step 2: Confirmation -->
+    <relationship from="E1" to="E2" label="Valider Confirmation"/>
+    <relationship from="E2" to="E3" label="Finaliser Transaction"/>
+    <relationship from="E3" to="E4" label="Approuver Changements"/>
+    <relationship from="E4" to="E6" label="Récupérer Pré-transaction"/>
+    <relationship from="E4" to="E7" label="Enregistrer Publication"/>
+    <relationship from="E4" to="E8" label="Validation Globale"/>
+    <relationship from="E4" to="E2" label="Générer Artefact"/>
+    <relationship from="E2" to="E1" label="Afficher Finalisation"/>
+  </relationships>
+</diagram>

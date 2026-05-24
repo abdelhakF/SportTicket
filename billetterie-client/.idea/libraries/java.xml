@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="java">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../bootstrapfx-0.4.0/subprojects/bootstrapfx-core/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../bootstrapfx-0.4.0/subprojects/sampler/src/main/java" />
+    </SOURCES>
+  </library>
+</component>

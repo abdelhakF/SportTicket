@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://www.omg.org/spec/UML/20090901" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+  <uml:Model xmi:id="TicketingClasses" name="TicketingClasses">
+    <packagedElement xmi:type="uml:Class" xmi:id="ClassUser" name="Utilisateur"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="ClassEvent" name="Evenement"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="ClassCategory" name="Categorie"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="ClassReservation" name="Reservation"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="ClassPayment" name="Paiement"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="ClassTicket" name="Billet"/>
+    
+    <packagedElement xmi:type="uml:Association" xmi:id="UserRes" memberEnd="ClassUser ClassReservation"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="EventCat" memberEnd="ClassEvent ClassCategory"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="CatRes" memberEnd="ClassCategory ClassReservation"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="ResPay" memberEnd="ClassReservation ClassPayment"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="PayTick" memberEnd="ClassPayment ClassTicket"/>
+  </uml:Model>
+</xmi:XMI>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainBorderPane" prefHeight="700.0" prefWidth="1000.0" stylesheets="@../../resources/css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.controller.ClientShellController">
+   <left>
+      <VBox prefWidth="260.0" spacing="0.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+         <children>
+             <!-- Logo Area -->
+            <StackPane prefHeight="110.0" styleClass="sidebar-header">
+               <children>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <Label styleClass="sidebar-title" text="SPORTTICKET PRO" />
+                        <Label styleClass="sidebar-subtitle" text="ESPACE CLIENT" />
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+            
+            <!-- Navigation Items -->
+            <VBox spacing="8.0" VBox.vgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+               </padding>
+               <children>
+                  <Button fx:id="btnHome" maxWidth="Infinity" alignment="CENTER_LEFT" onAction="#showHome" styleClass="button-sidebar" text="   🏠   Accueil" />
+                  <Button fx:id="btnEvents" maxWidth="Infinity" alignment="CENTER_LEFT" onAction="#showEvents" styleClass="button-sidebar" text="   🏆   Événements" />
+                  <Button fx:id="btnTickets" maxWidth="Infinity" alignment="CENTER_LEFT" onAction="#showTickets" styleClass="button-sidebar" text="   🎟   Mes Billets" />
+                  <Button fx:id="btnCart" maxWidth="Infinity" alignment="CENTER_LEFT" onAction="#showCart" styleClass="button-sidebar" text="   🛒   Mon Panier" />
+                  <Button fx:id="btnProfile" maxWidth="Infinity" alignment="CENTER_LEFT" onAction="#showProfile" styleClass="button-sidebar" text="   👤   Mon Profil" />
+               </children>
+            </VBox>
+            
+            <!-- Logout -->
+            <Button maxWidth="Infinity" onAction="#handleLogout" styleClass="sidebar-button-logout" text="🚪   Déconnexion">
+               <padding>
+                  <Insets bottom="15.0" top="15.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <!-- Content Area -->
+      <StackPane fx:id="contentArea" styleClass="content-area" BorderPane.alignment="CENTER">
+          <!-- Views will be loaded here -->
+      </StackPane>
+   </center>
+</BorderPane>

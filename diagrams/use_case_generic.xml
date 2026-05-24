@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="diagrams_schema.xsd">
+  <metadata>
+    <title>Structure Fonctionnelle (Cas d'Utilisation)</title>
+    <type>Use Case Diagram</type>
+  </metadata>
+  <elements>
+    <!-- Actors -->
+    <element id="A1" label="Utilisateur Type A"/>
+    <element id="A2" label="Utilisateur Type B"/>
+    
+    <!-- Use Cases -->
+    <element id="UC1" label="Action 1"/>
+    <element id="UC2" label="Action 2"/>
+    <element id="UC3" label="Action 3"/>
+    <element id="UC4" label="Action 4"/>
+    <element id="UC5" label="Action 5"/>
+    <element id="UC6" label="Action 6"/>
+    <element id="UC7" label="Action 7"/>
+    <element id="UC8" label="Action 8"/>
+    <element id="UC9" label="Action 9"/>
+    <element id="UC10" label="Action 10"/>
+    <element id="UC11" label="Action 11"/>
+    <element id="UC12" label="Action 12"/>
+    <element id="UC13" label="Action 13"/>
+    <element id="UC14" label="Action 14"/>
+  </elements>
+  <relationships>
+    <!-- Actor A1 Associations -->
+    <relationship from="A1" to="UC1"/>
+    <relationship from="A1" to="UC2"/>
+    <relationship from="A1" to="UC3"/>
+    <relationship from="A1" to="UC4"/>
+    <relationship from="A1" to="UC5"/>
+    <relationship from="A1" to="UC8"/>
+    <relationship from="A1" to="UC9"/>
+    
+    <!-- Actor A2 Associations -->
+    <relationship from="A2" to="UC2"/>
+    <relationship from="A2" to="UC10"/>
+    <relationship from="A2" to="UC11"/>
+    <relationship from="A2" to="UC12"/>
+    <relationship from="A2" to="UC13"/>
+    <relationship from="A2" to="UC14"/>
+    
+    <!-- Includes / Extends -->
+    <relationship from="UC5" to="UC2" type="include"/>
+    <relationship from="UC5" to="UC4" type="include"/>
+    <relationship from="UC6" to="UC5" type="extend"/>
+    <relationship from="UC7" to="UC6" type="include"/>
+    <relationship from="UC8" to="UC2" type="include"/>
+  </relationships>
+</diagram>

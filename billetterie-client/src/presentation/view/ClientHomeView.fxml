@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="793.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.controller.ClientHomeController">
+   <content>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="0" style="-fx-background-color: #f8f9fa;">
+         <children>
+            <!-- 1. HEADER HERO -->
+            <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="280.0" spacing="20.0" style="-fx-background-color: linear-gradient(to bottom right, #1a237e, #283593);">
+               <padding>
+                  <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+               </padding>
+               <children>
+                  <Label fx:id="welcomeLabel" style="-fx-font-size: 2.2em; -fx-font-weight: bold;" text="Bienvenue, [Nom Utilisateur]" textFill="WHITE" />
+                  <Label style="-fx-font-size: 1.1em;" text="Votre espace personnel SportTicket Pro" textFill="rgba(255,255,255,0.8)" />
+                  <HBox alignment="CENTER" spacing="15.0">
+                     <children>
+                        <Button onAction="#goToEvents" style="-fx-background-color: lime; -fx-background-radius: 15;" text="PARCOURIR LES COMPÉTITIONS">
+                           <styleClass>
+                              <String fx:value="button-action" />
+                           </styleClass>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+
+                        <!-- 2. STATISTICS / SUMMARY (Glassmorphism inspired) -->
+            <HBox alignment="CENTER" spacing="30.0">
+                <padding>
+                    <Insets bottom="40.0" left="40.0" right="40.0" top="-40.0" />
+                </padding>
+                <children>
+                    <VBox alignment="CENTER" prefWidth="250.0" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 5);">
+                        <padding>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                     </padding>
+                        <children>
+                            <Label style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="🎫 12" textFill="#1a237e" />
+                            <Label text="Billets achetés" textFill="#6c757d" />
+                        </children>
+                    </VBox>
+                    <VBox alignment="CENTER" prefWidth="250.0" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 5);">
+                        <padding>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                     </padding>
+                        <children>
+                            <Label style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="🛒 2" textFill="#283593" />
+                            <Label text="Articles au panier" textFill="#6c757d" />
+                        </children>
+                    </VBox>
+                    <VBox alignment="CENTER" prefWidth="250.0" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 5);">
+                        <padding>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                     </padding>
+                        <children>
+                            <Label style="-fx-font-size: 1.5em; -fx-font-weight: bold;" text="📅 Prochain match" textFill="#00e676" />
+                            <Label text="Dans 3 jours" textFill="#6c757d" />
+                        </children>
+                    </VBox>
+                </children>
+            </HBox>
+
+                        <VBox spacing="40.0" style="-fx-padding: 40;">
+               <children>
+                  <!-- 3. MAIN SECTIONS -->
+                  <VBox spacing="20.0">
+                     <children>
+                        <Label prefHeight="7.0" prefWidth="102.0" styleClass="label-header" text="Actions Rapides" textFill="#1a237e" />
+                        <FlowPane hgap="25.0" vgap="25.0">
+                           <children>
+                              <VBox alignment="CENTER" onMouseClicked="#showTickets" prefWidth="220.0" spacing="15.0" style="-fx-cursor: hand; -fx-background-color: white; -fx-padding: 30;" styleClass="card">
+                                 <children>
+                                    <Label style="-fx-font-size: 3em;" text="🎟" />
+                                    <Label styleClass="label-title" text="Mes Billets" />
+                                    <Label text="Voir et télécharger" textFill="#6c757d" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" onMouseClicked="#showCart" prefWidth="220.0" spacing="15.0" style="-fx-cursor: hand; -fx-background-color: white; -fx-padding: 30;" styleClass="card">
+                                 <children>
+                                    <Label style="-fx-font-size: 3em;" text="🛒" />
+                                    <Label styleClass="label-title" text="Mon Panier" />
+                                    <Label text="Finaliser ma commande" textFill="#6c757d" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" onMouseClicked="#showProfile" prefWidth="220.0" spacing="15.0" style="-fx-cursor: hand; -fx-background-color: white; -fx-padding: 30;" styleClass="card">
+                                 <children>
+                                    <Label style="-fx-font-size: 3em;" text="👤" />
+                                    <Label styleClass="label-title" text="Mon Profil" />
+                                    <Label text="Gérer mes infos" textFill="#6c757d" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" onMouseClicked="#goToEvents" prefWidth="220.0" spacing="15.0" style="-fx-cursor: hand; -fx-background-color: white; -fx-padding: 30;" styleClass="card">
+                                 <children>
+                                    <Label style="-fx-font-size: 3em;" text="✨" />
+                                    <Label styleClass="label-title" text="Nouveautés" />
+                                    <Label text="Derniers événements" textFill="#6c757d" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+
+                                    <!-- 4. FOOTER -->
+            <VBox alignment="CENTER" prefHeight="53.0" prefWidth="890.0" spacing="10.0" style="-fx-background-color: #1a237e;">
+               <padding>
+                  <Insets bottom="30.0" left="40.0" right="40.0" top="30.0" />
+               </padding>
+               <children>
+                  <Label style="-fx-text-fill: rgba(255,255,255,0.6);" text="Besoin d'aide ? Contactez le support" />
+                  <Label style="-fx-text-fill: rgba(255,255,255,0.4); -fx-font-size: 0.9em;" text="© 2024 SportTicket Pro. Version 2.1.0" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

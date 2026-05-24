@@ -1,0 +1,31 @@
+@startuml
+actor "Client" as client
+participant "ClientMain (View)" as view
+participant "TicketService (RMI Proxy)" as rmi
+participant "TicketServiceImpl" as service
+participant "ReservationDAO" as resDao
+participant "CategorieDAO" as catDao
+participant "PaiementDAO" as payDao
+database "PostgreSQL" as db
+
+title Processus de Réservation et Paiement
+
+client -> view : Sélectionner Événement & Quantité
+view -> rmi : reserverPlaces(userId, catId, qty)
+rmi -> service : reserverPlaces(...)
+service -> catDao : findById(catId)
+service -> resDao : save(Reservation)
+resDao -> db : INSERT
+service -> catDao : updatePlaces(catId, -qty)
+service --> view : Reservation details
+
+client -> view : Valider Paiement
+view -> rmi : payerReservation(resId, methode)
+rmi -> service : payerReservation(...)
+service -> resDao : findById(resId)
+service -> payDao : save(Paiement)
+service -> catDao : updatePlaces(catId, -qty, +qty)
+service -> db : Update stock & payment
+service --> view : Billet(s) généré(s)
+view --> client : Afficher Confirmation
+@enduml

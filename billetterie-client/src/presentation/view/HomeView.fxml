@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane fitToWidth="true" hbarPolicy="NEVER" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.controller.HomeController">
+   <content>
+      <VBox style="-fx-background-color: white;">
+         <children>
+            <!-- 1. HEADER / NAVBAR -->
+            <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: white; -fx-padding: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+               <children>
+                  <Label style="-fx-font-weight: bold; -fx-font-size: 1.2em;" text="SPORTTICKET PRO" textFill="#1a237e" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <HBox alignment="CENTER" spacing="15.0">
+                     <children>
+                        <Hyperlink style="-fx-underline: false; -fx-font-weight: bold;" text="Accueil" textFill="#1a237e" visited="true" />
+                        <Hyperlink onAction="#goToEvents" style="-fx-underline: false;" text="Compétitions" textFill="#6c757d" visited="true" />
+                        <Hyperlink onAction="#showTickets" style="-fx-underline: false;" text="Billets" textFill="#6c757d" visited="true" />
+                        <Hyperlink onAction="#showContact" style="-fx-underline: false;" text="Contact" textFill="#6c757d" visited="true" />
+                     </children>
+                  </HBox>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#handleLogin" prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: lime;" text="Se connecter" textFill="#121111ee">
+                           <styleClass>
+                              <String fx:value="button-secondary" />
+                           </styleClass>
+                           <font>
+                              <Font name="Ubuntu Sans Mono Regular" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleRegister" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: linear-gradient(to right, #1a237e, #283593);" text="S'inscrire" textFill="#fffefe">
+                           <styleClass>
+                              <String fx:value="button-primary" />
+                           </styleClass>
+                           <font>
+                              <Font name="Ubuntu Sans Mono Regular" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </HBox>
+
+            <!-- 2. HERO SECTION -->
+            <StackPane>
+               <children>
+                  <!-- Background Placeholder (Gradient consistent with Sidebar) -->
+                  <VBox alignment="CENTER" prefHeight="400.0" style="-fx-background-color: linear-gradient(to right, #1a237e, #283593);">
+                     <children>
+                        <VBox alignment="CENTER" maxWidth="800.0" spacing="20.0">
+                           <children>
+                              <Label style="-fx-font-size: 3em; -fx-font-weight: bold;" text="Vivez l'émotion du sport en direct" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+                              <Label style="-fx-font-size: 1.25em;" text="Réservez vos places pour les plus grands événements sportifs : Football, Tennis, Basket et plus encore." textAlignment="CENTER" textFill="#f8f9fa" wrapText="true" />
+                              <Button mnemonicParsing="false" onAction="#goToEvents" style="-fx-border-radius: 70; -fx-background-color: lime;" text="VOIR LES COMPÉTITIONS">
+                                 <padding>
+                                    <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="button-action" />
+                                    <String fx:value="shadow-lg" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </StackPane>
+
+            <!-- 3. COMPETITIONS A VENIR -->
+            <VBox spacing="30.0">
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </padding>
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <Label styleClass="label-header" text="Compétitions à la une" textFill="#1a237e" />
+                              <Label styleClass="label-subtitle" text="Les événements les plus attendus de la saison" />
+                              <Region prefHeight="4.0" prefWidth="60.0" style="-fx-background-color: #00e676; -fx-background-radius: 2;" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  
+                  <FlowPane alignment="CENTER" hgap="30.0" vgap="30.0">
+                     <children>
+                        <!-- CARD 1 -->
+                        <VBox alignment="TOP_CENTER" prefWidth="300.0" spacing="10.0">
+                           <styleClass>
+                              <String fx:value="card" />
+                              <String fx:value="shadow-sm" />
+                           </styleClass>
+                           <children>
+                              <StackPane prefHeight="150.0" style="-fx-background-color: #e9ecef; -fx-border-insets: 5;">
+                                 <children>
+                                    <Label style="-fx-font-size: 50px;" text="⚽" />
+                                 </children>
+                              </StackPane>
+                              <VBox spacing="5.0" styleClass="card-body">
+                                 <children>
+                                    <Label styleClass="label-title" text="Finale Coupe Nationale" wrapText="true" />
+                                    <Label styleClass="label-subtitle" text="Samedi 15 Mars • Stade de France" />
+                                    <Label styleClass="label-success" text="À partir de 45€" />
+                                    <Region prefHeight="10.0" />
+                                    <Button maxWidth="Infinity" onAction="#goToEvents" style="-fx-background-color: lime;" text="Réserver">
+                                       <styleClass>
+                                          <String fx:value="button-primary" />
+                                       </styleClass>
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        
+                        <!-- CARD 2 -->
+                         <VBox alignment="TOP_CENTER" prefWidth="300.0" spacing="10.0">
+                            <styleClass>
+                               <String fx:value="card" />
+                               <String fx:value="shadow-sm" />
+                            </styleClass>
+                           <children>
+                              <StackPane prefHeight="150.0" style="-fx-background-color: #e9ecef;">
+                                 <children>
+                                    <Label style="-fx-font-size: 50px;" text="🎾" />
+                                 </children>
+                              </StackPane>
+                              <VBox spacing="5.0" styleClass="card-body">
+                                 <children>
+                                    <Label styleClass="label-title" text="Open de Tennis - Demi-finale" wrapText="true" />
+                                    <Label styleClass="label-subtitle" text="Dimanche 22 Mai • Roland Garros" />
+                                    <Label styleClass="label-success" text="À partir de 80€" />
+                                    <Region prefHeight="10.0" />
+                                    <Button maxWidth="Infinity" onAction="#goToEvents" style="-fx-background-color: lime;" text="Réserver">
+                                       <styleClass>
+                                          <String fx:value="button-primary" />
+                                       </styleClass>
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                     <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </VBox>
+
+                         <!-- CARD 3 -->
+                         <VBox alignment="TOP_CENTER" prefWidth="300.0" spacing="10.0">
+                            <styleClass>
+                               <String fx:value="card" />
+                               <String fx:value="shadow-sm" />
+                            </styleClass>
+                           <children>
+                              <StackPane prefHeight="150.0" style="-fx-background-color: #e9ecef;">
+                                 <children>
+                                    <Label style="-fx-font-size: 50px;" text="🏀" />
+                                 </children>
+                              </StackPane>
+                              <VBox spacing="5.0" styleClass="card-body">
+                                 <children>
+                                    <Label styleClass="label-title" text="Basket League All-Star" wrapText="true" />
+                                    <Label styleClass="label-subtitle" text="Vendredi 10 Juin • Bercy Arena" />
+                                    <Label styleClass="label-success" text="À partir de 30€" />
+                                    <Region prefHeight="10.0" />
+                                    <Button maxWidth="Infinity" onAction="#goToEvents" style="-fx-background-color: lime;" text="Réserver">
+                                       <styleClass>
+                                          <String fx:value="button-primary" />
+                                       </styleClass>
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                     <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </FlowPane>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </VBox>
+
+            <!-- 4. AVANTAGES / FEATURES -->
+             <HBox alignment="CENTER" spacing="50.0" style="-fx-background-color: #f8f9fa;">
+               <padding>
+                  <Insets bottom="60.0" left="20.0" right="20.0" top="60.0" />
+               </padding>
+               <children>
+                  <VBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Label style="-fx-font-size: 2em;" text="🔒" />
+                        <Label styleClass="label-section" text="Paiement Sécurisé" />
+                        <Text fill="#6c757d" text="Transactions cryptées et 100% sécurisées" textAlignment="CENTER" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Label style="-fx-font-size: 2em;" text="🎟" />
+                        <Label styleClass="label-section" text="Billets Officiels" />
+                        <Text fill="#6c757d" text="Garantie d'authenticité sur toutes les places" textAlignment="CENTER" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Label style="-fx-font-size: 2em;" text="⚡" />
+                        <Label styleClass="label-section" text="Réservation Rapide" />
+                        <Text fill="#6c757d" text="Recevez vos e-billets instantanément" textAlignment="CENTER" />
+                     </children>
+                  </VBox>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </HBox>
+
+            <!-- 5. FOOTER -->
+            <VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #1a237e;">
+               <padding>
+                  <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+               </padding>
+               <children>
+                  <HBox alignment="CENTER" spacing="30.0">
+                     <children>
+                         <Hyperlink onAction="#goToEvents" style="-fx-underline: false;" text="Événements" textFill="#dee2e6" />
+                         <Hyperlink style="-fx-underline: false;" text="A propos" textFill="#dee2e6" />
+                         <Hyperlink style="-fx-underline: false;" text="CGV" textFill="#dee2e6" />
+                         <Hyperlink style="-fx-underline: false;" text="Support" textFill="#dee2e6" />
+                     </children>
+                  </HBox>
+                  <Region maxWidth="800" prefHeight="1.0" prefWidth="200.0" style="-fx-background-color: rgba(255,255,255,0.1);" />
+                  <Label style="-fx-text-fill: rgba(255,255,255,0.5);" text="© 2024 SportTicket Pro. Tous droits réservés." />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </VBox>
+
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

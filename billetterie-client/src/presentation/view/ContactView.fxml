@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+
+<VBox alignment="TOP_CENTER" spacing="30.0" style="-fx-background-color: #f4f7f6;" stylesheets="@../../resources/css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.controller.ContactController">
+    <padding>
+        <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+    </padding>
+    <children>
+        <!-- Back Button -->
+        <HBox alignment="CENTER_LEFT">
+            <children>
+                <Button onAction="#handleBack" styleClass="button-action" text="← Retour" />
+            </children>
+        </HBox>
+
+        <VBox alignment="CENTER" spacing="10.0">
+            <children>
+                <Label styleClass="label-header" text="Contactez-nous" textFill="#1a237e" />
+                <Label style="-fx-font-size: 1.1em;" text="Une question ? Une suggestion ? Nous sommes là pour vous aider." textFill="#6c757d" />
+            </children>
+        </VBox>
+
+        <HBox spacing="40.0" alignment="CENTER">
+            <children>
+                <!-- Contact Form -->
+                <VBox spacing="20.0" styleClass="card" prefWidth="500.0">
+                    <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                    </padding>
+                    <children>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label styleClass="label-title" text="Envoyer un message" />
+                                <Region prefHeight="2.0" prefWidth="50.0" style="-fx-background-color: #00e676;" />
+                            </children>
+                        </VBox>
+                        
+                        <VBox spacing="10.0">
+                            <children>
+                                <TextField fx:id="nameField" promptText="Votre nom complet" styleClass="form-control" />
+                                <TextField fx:id="emailField" promptText="Votre adresse email" styleClass="form-control" />
+                                <TextField fx:id="subjectField" promptText="Sujet du message" styleClass="form-control" />
+                                <TextArea fx:id="messageArea" prefHeight="150.0" promptText="Comment pouvons-nous vous aider ?" styleClass="form-control" wrapText="true" />
+                            </children>
+                        </VBox>
+                        
+                        <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#handleSendMessage" text="ENVOYER LE MESSAGE">
+                            <styleClass>
+                                <String fx:value="button-primary" />
+                            </styleClass>
+                        </Button>
+                    </children>
+                </VBox>
+
+                <!-- Contact Info -->
+                <VBox spacing="25.0" prefWidth="300.0">
+                    <children>
+                        <VBox spacing="10.0" styleClass="card">
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                            </padding>
+                            <children>
+                                <Label style="-fx-font-weight: bold; -fx-font-size: 1.1em;" text="📍 Adresse" textFill="#1a237e" />
+                                <Label text="123 Boulevard des Sports, 75000 Paris" wrapText="true" />
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="10.0" styleClass="card">
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                            </padding>
+                            <children>
+                                <Label style="-fx-font-weight: bold; -fx-font-size: 1.1em;" text="📞 Téléphone" textFill="#1a237e" />
+                                <Label text="+33 1 23 45 67 89" />
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="10.0" styleClass="card">
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                            </padding>
+                            <children>
+                                <Label style="-fx-font-weight: bold; -fx-font-size: 1.1em;" text="✉ Email" textFill="#1a237e" />
+                                <Label text="contact@sportticket.pro" />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>

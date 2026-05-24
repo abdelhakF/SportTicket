@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://www.omg.org/spec/UML/20090901" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+  <uml:Model xmi:id="TicketingSystem" name="TicketingSystem">
+    <!-- Actors -->
+    <packagedElement xmi:type="uml:Actor" xmi:id="ActorClient" name="Client"/>
+    <packagedElement xmi:type="uml:Actor" xmi:id="ActorAdmin" name="Administrateur"/>
+    
+    <!-- Use Cases -->
+    <packagedElement xmi:type="uml:UseCase" xmi:id="UC_Register" name="S'inscrire"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="UC_Login" name="Se Connecter"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="UC_Search" name="Rechercher des Événements"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="UC_Select" name="Sélectionner des Places"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="UC_Reserve" name="Réserver des Places"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="UC_Pay" name="Payer une Réservation"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="UC_Ticket" name="Générer le Billet"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="UC_ViewTickets" name="Consulter ses Billets"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="UC_Profile" name="Modifier son Profil"/>
+    
+    <packagedElement xmi:type="uml:UseCase" xmi:id="UC_ManageEvents" name="Gérer les Événements (CRUD)"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="UC_ManageBase" name="Gérer les Stades et Sports"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="UC_ManageCat" name="Gérer les Catégories de Prix"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="UC_ManageUsers" name="Gérer les Utilisateurs"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="UC_Stats" name="Consulter les Statistiques / CA"/>
+
+    <!-- Associations Client -->
+    <packagedElement xmi:type="uml:Association" xmi:id="Assoc_Client_Register" memberEnd="ActorClient UC_Register"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="Assoc_Client_Login" memberEnd="ActorClient UC_Login"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="Assoc_Client_Search" memberEnd="ActorClient UC_Search"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="Assoc_Client_Select" memberEnd="ActorClient UC_Select"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="Assoc_Client_Reserve" memberEnd="ActorClient UC_Reserve"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="Assoc_Client_ViewTickets" memberEnd="ActorClient UC_ViewTickets"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="Assoc_Client_Profile" memberEnd="ActorClient UC_Profile"/>
+
+    <!-- Associations Admin -->
+    <packagedElement xmi:type="uml:Association" xmi:id="Assoc_Admin_Login" memberEnd="ActorAdmin UC_Login"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="Assoc_Admin_Events" memberEnd="ActorAdmin UC_ManageEvents"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="Assoc_Admin_Base" memberEnd="ActorAdmin UC_ManageBase"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="Assoc_Admin_Cat" memberEnd="ActorAdmin UC_ManageCat"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="Assoc_Admin_Users" memberEnd="ActorAdmin UC_ManageUsers"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="Assoc_Admin_Stats" memberEnd="ActorAdmin UC_Stats"/>
+    
+    <!-- Includes / Extends -->
+    <packagedElement xmi:type="uml:Include" xmi:id="Inc_Reserve_Login" addition="UC_Login" includingCase="UC_Reserve"/>
+    <packagedElement xmi:type="uml:Include" xmi:id="Inc_Reserve_Select" addition="UC_Select" includingCase="UC_Reserve"/>
+    <packagedElement xmi:type="uml:Extend" xmi:id="Ext_Pay_Reserve" extendedCase="UC_Reserve" extension="UC_Pay"/>
+    <packagedElement xmi:type="uml:Include" xmi:id="Inc_Ticket_Pay" addition="UC_Pay" includingCase="UC_Ticket"/>
+    <packagedElement xmi:type="uml:Include" xmi:id="Inc_ViewTickets_Login" addition="UC_Login" includingCase="UC_ViewTickets"/>
+
+  </uml:Model>
+</xmi:XMI>

@@ -1,0 +1,347 @@
+/* Bootstrap-like CSS for JavaFX */
+
+/* Typography */
+.h1 {
+    -fx-font-size: 2.5em;
+    -fx-font-weight: bold;
+}
+
+.h2 {
+    -fx-font-size: 2em;
+    -fx-font-weight: bold;
+}
+
+.h3 {
+    -fx-font-size: 1.75em;
+    -fx-font-weight: bold;
+}
+
+.h4 {
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+}
+
+.h5 {
+    -fx-font-size: 1.25em;
+    -fx-font-weight: bold;
+}
+
+.h6 {
+    -fx-font-size: 1em;
+    -fx-font-weight: bold;
+}
+
+.text-primary {
+    -fx-text-fill: #0d6efd;
+}
+
+.text-secondary {
+    -fx-text-fill: #6c757d;
+}
+
+.text-success {
+    -fx-text-fill: #198754;
+}
+
+.text-danger {
+    -fx-text-fill: #dc3545;
+}
+
+.text-warning {
+    -fx-text-fill: #ffc107;
+}
+
+.text-info {
+    -fx-text-fill: #0dcaf0;
+}
+
+.text-light {
+    -fx-text-fill: #f8f9fa;
+}
+
+.text-dark {
+    -fx-text-fill: #212529;
+}
+
+.text-muted {
+    -fx-text-fill: #6c757d;
+}
+
+.text-white {
+    -fx-text-fill: #fff;
+}
+
+/* Buttons */
+.btn {
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 0.375em;
+    /* 6px */
+    -fx-padding: 0.375em 0.75em;
+    -fx-font-size: 1em;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER;
+}
+
+.btn-primary {
+    -fx-background-color: #0d6efd;
+    -fx-text-fill: white;
+    -fx-border-color: #0d6efd;
+    -fx-border-radius: 0.375em;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #0b5ed7;
+    -fx-border-color: #0a58ca;
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #0a58ca;
+}
+
+.btn-secondary {
+    -fx-background-color: #6c757d;
+    -fx-text-fill: white;
+    -fx-border-color: #6c757d;
+    -fx-border-radius: 0.375em;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #5c636a;
+    -fx-border-color: #565e64;
+}
+
+.btn-success {
+    -fx-background-color: #198754;
+    -fx-text-fill: white;
+    -fx-border-color: #198754;
+    -fx-border-radius: 0.375em;
+}
+
+.btn-success:hover {
+    -fx-background-color: #157347;
+    -fx-border-color: #146c43;
+}
+
+.btn-danger {
+    -fx-background-color: #dc3545;
+    -fx-text-fill: white;
+    -fx-border-color: #dc3545;
+    -fx-border-radius: 0.375em;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #bb2d3b;
+    -fx-border-color: #b02a37;
+}
+
+.btn-warning {
+    -fx-background-color: #ffc107;
+    -fx-text-fill: black;
+    -fx-border-color: #ffc107;
+    -fx-border-radius: 0.375em;
+}
+
+.btn-warning:hover {
+    -fx-background-color: #ffca2c;
+    -fx-border-color: #ffc720;
+}
+
+.btn-info {
+    -fx-background-color: #0dcaf0;
+    -fx-text-fill: black;
+    -fx-border-color: #0dcaf0;
+    -fx-border-radius: 0.375em;
+}
+
+.btn-info:hover {
+    -fx-background-color: #31d2f2;
+    -fx-border-color: #25cff2;
+}
+
+.btn-light {
+    -fx-background-color: #f8f9fa;
+    -fx-text-fill: black;
+    -fx-border-color: #f8f9fa;
+    -fx-border-radius: 0.375em;
+}
+
+.btn-light:hover {
+    -fx-background-color: #f9fafb;
+    -fx-border-color: #f9fafb;
+}
+
+.btn-dark {
+    -fx-background-color: #212529;
+    -fx-text-fill: white;
+    -fx-border-color: #212529;
+    -fx-border-radius: 0.375em;
+}
+
+.btn-dark:hover {
+    -fx-background-color: #1c1f23;
+    -fx-border-color: #1a1e21;
+}
+
+.btn-outline-primary {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0d6efd;
+    -fx-border-color: #0d6efd;
+    -fx-border-radius: 0.375em;
+    -fx-border-width: 1px;
+}
+
+.btn-outline-primary:hover {
+    -fx-background-color: #0d6efd;
+    -fx-text-fill: white;
+}
+
+/* Alerts */
+.alert {
+    -fx-padding: 1em;
+    -fx-background-radius: 0.375em;
+    -fx-border-radius: 0.375em;
+    -fx-border-width: 1px;
+}
+
+.alert-primary {
+    -fx-background-color: #cfe2ff;
+    -fx-text-fill: #084298;
+    -fx-border-color: #b6d4fe;
+}
+
+.alert-secondary {
+    -fx-background-color: #e2e3e5;
+    -fx-text-fill: #41464b;
+    -fx-border-color: #d3d6d8;
+}
+
+.alert-success {
+    -fx-background-color: #d1e7dd;
+    -fx-text-fill: #0f5132;
+    -fx-border-color: #badbcc;
+}
+
+.alert-danger {
+    -fx-background-color: #f8d7da;
+    -fx-text-fill: #842029;
+    -fx-border-color: #f5c2c7;
+}
+
+.alert-warning {
+    -fx-background-color: #fff3cd;
+    -fx-text-fill: #664d03;
+    -fx-border-color: #ffecb5;
+}
+
+.alert-info {
+    -fx-background-color: #cff4fc;
+    -fx-text-fill: #055160;
+    -fx-border-color: #b6effb;
+}
+
+/* Panels / Cards */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 0.375em;
+    -fx-border-color: rgba(0, 0, 0, 0.125);
+    -fx-border-radius: 0.375em;
+    -fx-border-width: 1px;
+    -fx-effect: null;
+    /* Reset default effects if any */
+}
+
+.card-body {
+    -fx-padding: 1em;
+}
+
+.card-header {
+    -fx-padding: 0.5em 1em;
+    -fx-background-color: rgba(0, 0, 0, 0.03);
+    -fx-background-radius: 0.375em 0.375em 0 0;
+    -fx-border-color: rgba(0, 0, 0, 0.125);
+    -fx-border-width: 0 0 1px 0;
+}
+
+.card-footer {
+    -fx-padding: 0.5em 1em;
+    -fx-background-color: rgba(0, 0, 0, 0.03);
+    -fx-background-radius: 0 0 0.375em 0.375em;
+    -fx-border-color: rgba(0, 0, 0, 0.125);
+    -fx-border-width: 1px 0 0 0;
+}
+
+/* Forms */
+.form-control {
+    -fx-background-color: white;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 0.375em;
+    -fx-padding: 0.375em 0.75em;
+    -fx-background-radius: 0.375em;
+}
+
+.form-control:focused {
+    -fx-border-color: #86b7fe;
+    -fx-effect: dropshadow(three-pass-box, rgba(13, 110, 253, 0.25), 4, 0, 0, 0);
+}
+
+/* Utilities */
+.rounded {
+    -fx-background-radius: 0.375em !important;
+    -fx-border-radius: 0.375em !important;
+}
+
+.rounded-0 {
+    -fx-background-radius: 0 !important;
+    -fx-border-radius: 0 !important;
+}
+
+.rounded-1 {
+    -fx-background-radius: 0.2em !important;
+    -fx-border-radius: 0.2em !important;
+}
+
+.rounded-2 {
+    -fx-background-radius: 0.25em !important;
+    -fx-border-radius: 0.25em !important;
+}
+
+.rounded-3 {
+    -fx-background-radius: 0.5em !important;
+    -fx-border-radius: 0.5em !important;
+}
+
+.rounded-circle {
+    -fx-background-radius: 50% !important;
+    -fx-border-radius: 50% !important;
+}
+
+.rounded-pill {
+    -fx-background-radius: 50em !important;
+    -fx-border-radius: 50em !important;
+}
+
+.shadow {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0, 0, 2);
+}
+
+.shadow-sm {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.075), 4, 0, 0, 1);
+}
+
+.shadow-lg {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.175), 20, 0, 0, 3);
+}
+
+.shadow-none {
+    -fx-effect: null;
+}
+
+.w-100 {
+    -fx-pref-width: 100%;
+    -fx-max-width: Infinity;
+}
+
+.h-100 {
+    -fx-pref-height: 100%;
+    -fx-max-height: Infinity;
+}

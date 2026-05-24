@@ -1,0 +1,14 @@
+src/ClientMain.java
+src/Model/Billet.java
+src/Model/Categorie.java
+src/Model/Evenement.java
+src/Model/Paiement.java
+src/Model/Reservation.java
+src/Model/Sport.java
+src/Model/Stade.java
+src/Model/Utilisateur.java
+src/service/TicketService.java
+src/service/TicketServiceClient.java
+src/app/MainApp.java
+src/presentation/controller/LoginController.java
+src/presentation/controller/DashboardController.java

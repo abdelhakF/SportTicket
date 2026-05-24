@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://www.omg.org/spec/UML/20090901" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+  <uml:Model xmi:id="SequenceReservation" name="SequenceReservation">
+    <packagedElement xmi:type="uml:Lifeline" xmi:id="Lifeline_Client" name="Client"/>
+    <packagedElement xmi:type="uml:Lifeline" xmi:id="Lifeline_View" name="ClientMain (View)"/>
+    <packagedElement xmi:type="uml:Lifeline" xmi:id="Lifeline_RMI" name="TicketService (RMI Proxy)"/>
+    <packagedElement xmi:type="uml:Lifeline" xmi:id="Lifeline_Service" name="TicketServiceImpl"/>
+    <packagedElement xmi:type="uml:Lifeline" xmi:id="Lifeline_DAO" name="ReservationDAO"/>
+    <packagedElement xmi:type="uml:Lifeline" xmi:id="Lifeline_DB" name="PostgreSQL"/>
+
+    <packagedElement xmi:type="uml:Message" xmi:id="Msg_Select" name="Sélectionner Événement" receiveEvent="Lifeline_View" sendEvent="Lifeline_Client"/>
+    <packagedElement xmi:type="uml:Message" xmi:id="Msg_Reserve" name="reserverPlaces" receiveEvent="Lifeline_RMI" sendEvent="Lifeline_View"/>
+    <packagedElement xmi:type="uml:Message" xmi:id="Msg_RmiCall" name="reserverPlaces" receiveEvent="Lifeline_Service" sendEvent="Lifeline_RMI"/>
+    <packagedElement xmi:type="uml:Message" xmi:id="Msg_Save" name="save(Reservation)" receiveEvent="Lifeline_DAO" sendEvent="Lifeline_Service"/>
+    <packagedElement xmi:type="uml:Message" xmi:id="Msg_Insert" name="INSERT" receiveEvent="Lifeline_DB" sendEvent="Lifeline_DAO"/>
+  </uml:Model>
+</xmi:XMI>

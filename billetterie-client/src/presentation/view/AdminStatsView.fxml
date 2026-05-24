@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" spacing="20.0" stylesheets="@../../resources/css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.controller.AdminStatsController">
+    <padding>
+       <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+    <children>
+       <HBox alignment="CENTER_LEFT" spacing="20.0">
+          <children>
+             <Label styleClass="label-header" text="Statistiques Financières" />
+             <HBox HBox.hgrow="ALWAYS" />
+             <Button onAction="#refreshStats" styleClass="button-primary" text="🔄 Actualiser" />
+          </children>
+       </HBox>
+       
+       <VBox spacing="20.0" VBox.vgrow="ALWAYS">
+          <children>
+             <VBox styleClass="card-elevated">
+                <padding>
+                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+                <children>
+                   <Label styleClass="label-title" text="Chiffre d'Affaires par Événement" />
+                </children>
+             </VBox>
+             <BarChart fx:id="statsApp" styleClass="card" title="Reventes Totales" VBox.vgrow="ALWAYS">
+                <padding>
+                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+                <xAxis>
+                   <CategoryAxis label="Événement" side="BOTTOM" />
+                </xAxis>
+                <yAxis>
+                   <NumberAxis label="CA (DH)" side="LEFT" />
+                </yAxis>
+             </BarChart>
+          </children>
+       </VBox>
+    </children>
+</VBox>
